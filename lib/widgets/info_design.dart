@@ -49,7 +49,7 @@ class _InfoDesignWidgetState extends State<InfoDesignWidget> {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: SizedBox(
-            height: 90,
+            // height: 100,
             width: MediaQuery.of(context).size.width,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,39 +65,43 @@ class _InfoDesignWidgetState extends State<InfoDesignWidget> {
                         child: Image.network(
                           widget.model!.thumbnailUrl!,
                           width: 100,
-                          height: 150,
+                          height: 100,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
                       const SizedBox(width: 20),
-                      SizedBox(
-                        width: 150,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              widget.model!.menuTitle!,
-                              style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                      Flexible(
+                        child: SizedBox(
+                          width: 150,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  widget.model!.menuTitle!,
+                                  style: GoogleFonts.lato(
+                                    textStyle: const TextStyle(
+                                      fontSize: 21,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                            Flexible(
-                              child: Text(
-                                widget.model!.menuInfo!,
-                                maxLines: 2,
-                                style: GoogleFonts.lato(
-                                  textStyle: const TextStyle(
-                                      fontSize: 15, fontFamily: "Acme", color: Colors.grey),
+                              Flexible(
+                                child: Text(
+                                  widget.model!.menuInfo!,
+                                  maxLines: 2,
+                                  style: GoogleFonts.lato(
+                                    textStyle: const TextStyle(
+                                        fontSize: 15, fontFamily: "Acme", color: Colors.grey),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],

@@ -146,8 +146,8 @@ class _SellerInfoState extends State<SellerInfo> {
                   child: Padding(
                     padding: const EdgeInsets.all(1),
                     child: SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: 80,
+                      width: 80,
                       child: CircleAvatar(
                         //we get the profile image from sharedPreferences (global.dart)
                         backgroundImage: NetworkImage(
